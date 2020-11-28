@@ -24,7 +24,7 @@ class ImagePickerPage extends StatefulWidget {
 }
 
 class _ImagePickerPageState extends State<ImagePickerPage> {
-  Image image;
+  var image;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,9 +34,9 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.open_in_browser),
         onPressed: () async {
-          final _image = await FlutterWebImagePicker.getImage;
+          final _image = await FlutterWebImagePicker.getImageFile;
           setState(() {
-            image = _image;
+            image = _image.getImage();
           });
         },
       ),
