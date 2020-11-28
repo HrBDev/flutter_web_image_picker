@@ -1,9 +1,15 @@
 import 'dart:typed_data';
 
-class WebImageInfo{
+import 'package:flutter/widgets.dart';
+
+class WebImageInfo {
   String fileName;
   String filePath;
   String base64;
   String base64WithScheme;
   Uint8List data;
+
+  getImage() {
+    return Image.memory(data, semanticLabel: fileName);
+  }
 }
