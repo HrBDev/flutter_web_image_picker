@@ -9,7 +9,7 @@ class WebImageInfo {
   String base64WithScheme;
   Uint8List data;
 
-  getImage() {
+  Image getImage() {
     return Image.memory(data, semanticLabel: fileName);
   }
 }
